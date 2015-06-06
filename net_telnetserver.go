@@ -6,6 +6,7 @@ import (
     "log"
     "net" //支持通讯的包
     "os"
+    "bufio"
 )
 
 type message struct {
@@ -70,16 +71,16 @@ func sending(mesch chan message, connch chan net.Conn) {
 
 //处理客户端消息
 func doclient(msgch chan message, conn net.Conn,connch chan net.Conn) {
-    conn.Write([]byte("What's your name?\n"))
-    nameInfo := make([]byte, 64) //生成一个缓存数组
-    namelen, err := conn.Read(nameInfo)
+    conn.Write([]byte("What's your name?\r\n"))
+    client_reader:=bufio.NewReader(conn)
+    nameInfo,err:=client_reader.ReadBytes('\n')
+    namelen:=len(nameInfo)
     check(err)
     nameInfo=append(nameInfo[:namelen-2], []byte(": ")...)
     fmt.Println(string(nameInfo), "已连接.")
-    conn.Write([]byte("What do you want to say?\n"))
+    conn.Write([]byte("What do you want to say?\r\n"))
     for {
-        buf := make([]byte, 512)
-        _, err := conn.Read(buf) //读取客户机发的消息
+        buf,err:=client_reader.ReadBytes('\n')
         flag := check(err)
         if flag == 0 {
             fmt.Println(string(nameInfo), "退出了.")
