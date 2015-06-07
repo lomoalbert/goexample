@@ -41,7 +41,7 @@ func main() {
 }
 
 func sending(mesch chan message, connch chan net.Conn) {
-    connlist := make([]net.Conn, 0)
+    connlist := []net.Conn{}
     for {
         select {
         case msg := <-mesch :
