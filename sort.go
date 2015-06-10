@@ -20,6 +20,7 @@ func main() {
     sort.Ints(i)
     fmt.Println(i)
     fmt.Println("已排序:",sort.IntsAreSorted(i))
+    //搜索仅限于已排序的序列
     fmt.Println(sort.SearchInts(i, 38))
     sort.Sort(sort.Reverse(sort.IntSlice(i)))
     fmt.Println(i)
