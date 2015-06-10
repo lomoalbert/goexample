@@ -47,6 +47,7 @@ func main() {
     fmt.Println("已排序:",sort.IsSorted(p))
     fmt.Println(p)
     //搜索仅限于已排序的序列
+    //返回第一个使函数返回true的元素index
     point_min :=sort.Search(p.Len(),func(i int)bool{return p[i].x*p[i].y >5})
     fmt.Println("面积大于5的最小元素index:",point_min)
     sort.Sort(sort.Reverse(p))
