@@ -35,6 +35,7 @@ func main() {
     s:=[]string{"abc","iop","efd","阿","波","次","的","zho","aec","wjd"}
     sort.Strings(s)
     fmt.Println(s)
+    //搜索仅限于已排序的序列
     fmt.Println(sort.SearchStrings(s,"efd"))
     fmt.Println("已排序:",sort.StringsAreSorted(s))
     for _,i :=range s{
