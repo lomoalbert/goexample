@@ -28,6 +28,7 @@ func main() {
     f:=[]float64{1.1,1.2,1.5,1.32,1.3132}
     sort.Float64s(f)
     fmt.Println(f)
+    //搜索仅限于已排序的序列
     fmt.Println("已排序:",sort.Float64sAreSorted(f))
     fmt.Println(sort.SearchFloat64s(f,1.32))
 
