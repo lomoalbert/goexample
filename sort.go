@@ -33,6 +33,7 @@ func main() {
     fmt.Println(sort.SearchFloat64s(f,1.32))
 
     s:=[]string{"abc","iop","efd","阿","波","次","的","zho","aec","wjd"}
+    //中文字符转为byte进行计算,中文一定在英文后边
     sort.Strings(s)
     fmt.Println(s)
     //搜索仅限于已排序的序列
