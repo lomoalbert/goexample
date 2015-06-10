@@ -20,7 +20,7 @@ func main() {
     sort.Ints(i)
     fmt.Println(i)
     fmt.Println("已排序:",sort.IntsAreSorted(i))
-    //搜索仅限于已排序的序列
+    //搜索仅限于已排序的序列,返回index值
     fmt.Println(sort.SearchInts(i, 38))
     sort.Sort(sort.Reverse(sort.IntSlice(i)))
     fmt.Println(i)
@@ -28,7 +28,7 @@ func main() {
     f:=[]float64{1.1,1.2,1.5,1.32,1.3132}
     sort.Float64s(f)
     fmt.Println(f)
-    //搜索仅限于已排序的序列
+    //搜索仅限于已排序的序列,返回index值
     fmt.Println("已排序:",sort.Float64sAreSorted(f))
     fmt.Println(sort.SearchFloat64s(f,1.32))
 
@@ -36,7 +36,7 @@ func main() {
     //中文字符转为byte进行计算,中文一定在英文后边
     sort.Strings(s)
     fmt.Println(s)
-    //搜索仅限于已排序的序列
+    //搜索仅限于已排序的序列,返回index值
     fmt.Println(sort.SearchStrings(s,"efd"))
     fmt.Println("已排序:",sort.StringsAreSorted(s))
     for _,i :=range s{
