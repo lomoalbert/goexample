@@ -28,6 +28,14 @@ func main() {
     p("Index:     ", s.Index("test", "e"))
     //该函数主要判断chars集中任意的一个字符在s串中第一次出现的位置，如果不存在返回-1
     p("IndexAny:  ", s.IndexAny("test", "abcde"))
+    //该函数主要判断s中的每一个字符传入函数f，如果符合，那么返回该字符的位置，如果都不符合则返回-1
+    p("IndexFunc: ", s.IndexFunc("test", func(r rune) bool {
+        if r=='s' {
+            return true
+        }else {
+            return false
+        }
+    }))
     p("中文Index: ", s.Index("中文test", "文"))
     p("Join:      ", s.Join([]string{"ab", "cd"}, "-"))
     p("Repeat:    ", s.Repeat("a", 5))
