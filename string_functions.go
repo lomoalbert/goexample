@@ -36,7 +36,8 @@ func main() {
             return false
         }
     }))
-    p("中文Index: ", s.Index("中文test", "文"))
+    //该函数主要判断unicode r在s串中第一次出现的位置，如果不存在返回-1
+    p("IndexRunc: ", s.IndexRune("中华人民共和国", '人'))
     p("Join:      ", s.Join([]string{"ab", "cd"}, "-"))
     p("Repeat:    ", s.Repeat("a", 5))
     p("Replace:   ", s.Replace("foooo", "o", "0", -1))
