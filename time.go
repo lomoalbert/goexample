@@ -20,17 +20,20 @@ Hour = 60 * Minute                  (60*60*1e9)
 func main() {
     starttime := time.Now()
     //time.After返回一个chan,指定时间后通过chan传回即时时间
-    fmt.Println(<-time.After(2*time.Second))
+    fmt.Println(<-time.After(time.Second))
     //time.Sleep 阻塞指定时间
-    time.Sleep(2 * time.Second)
+    time.Sleep(time.Second)
     //time.ParseDuration将一个表示时间的字符串解析，每一个字符串是带有单位的十进制数序列，每个数字带有可选的单位或小数位。
     //合法的单位是"ns", "us" , "ms", "s", "m", "h"。返回Duration值
     d, err := time.ParseDuration("1h2m3s4ms5.8us6ns")
     fmt.Println(d, err)
+    //Duration值默认单位为nanoseconds,但也可以传唤为其他单位,以及字符串
+    fmt.Println(d.Hours(), d.Minutes(), d.Seconds(), d.Nanoseconds(), d.String())
     //返回从时间t到当前时间的间隔，time.Now().Sub(t)的简写
     fmt.Println(time.Now().Sub(starttime))
     fmt.Println(time.Since(starttime))
-
+    //返回时间的时区信息
+    fmt.Println(starttime.Location())
     //time.Tick 类似time.After,但可以持续使用
     c := time.Tick(1 * time.Second)
     for now := range c {
