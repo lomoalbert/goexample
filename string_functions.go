@@ -12,6 +12,7 @@ func main() {
     p("ContainsAny:  ", s.ContainsAny("test", "abce"))
     p("ContainsRune:  ", s.ContainsRune("test", 'e'))
     p("ContainsRune:  ", s.ContainsRune("test中文", '中'))
+    p("Count:     ", s.Count("test", "t"))
     p("Equalold:  ", s.EqualFold("ABC中文", "abC中文"))
     //以空格split字符串
     p("Fields:    ", s.Fields("  foo bar  baz   "))
@@ -22,10 +23,11 @@ func main() {
         }else {
             return false
         }}))
-    p("Count:     ", s.Count("test", "t"))
     p("HasPrefix: ", s.HasPrefix("test", "te"))
     p("HasSuffix: ", s.HasSuffix("test", "st"))
     p("Index:     ", s.Index("test", "e"))
+    //该函数主要判断chars集中任意的一个字符在s串中第一次出现的位置，如果不存在返回-1
+    p("IndexAny:  ", s.IndexAny("test", "abcde"))
     p("中文Index: ", s.Index("中文test", "文"))
     p("Join:      ", s.Join([]string{"ab", "cd"}, "-"))
     p("Repeat:    ", s.Repeat("a", 5))
