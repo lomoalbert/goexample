@@ -9,6 +9,7 @@ var p = fmt.Println
 func main() {
     //Here’s a sample of the functions available in strings. Note that these are all functions from package, not methods on the string object itself. This means that we need pass the string in question as the first argument to the function.
     p("Contains:  ", s.Contains("test", "es"))
+    p("ContainsAny:  ", s.ContainsAny("test", "abce"))
     p("Count:     ", s.Count("test", "t"))
     p("HasPrefix: ", s.HasPrefix("test", "te"))
     p("HasSuffix: ", s.HasSuffix("test", "st"))
@@ -16,7 +17,7 @@ func main() {
     p("中文Index: ", s.Index("中文test", "文"))
     p("Join:      ", s.Join([]string{"ab", "cd"}, "-"))
     p("Repeat:    ", s.Repeat("a", 5))
-    p("Replace:   ", s.Replace("foooo", "o", "0",-1))
+    p("Replace:   ", s.Replace("foooo", "o", "0", -1))
     p("Replace:   ", s.Replace("foooo", "o", "0", 2))
     p("Split:     ", s.Split("a-b-c-d-e", "-"))
     p("ToLower:   ", s.ToLower("TEST"))
