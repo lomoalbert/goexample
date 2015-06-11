@@ -13,9 +13,11 @@ func main() {
     p("ContainsRune:  ", s.ContainsRune("test", 'e'))
     p("ContainsRune:  ", s.ContainsRune("test中文", '中'))
     p("Equalold:  ", s.EqualFold("ABC中文", "abC中文"))
+    //以空格split字符串
     p("Fields:    ", s.Fields("  foo bar  baz   "))
+    //以函数返回true的rune作为分隔符 分割字符串
     p("FieldsFunc:", s.FieldsFunc("abcdefg", func(r rune) bool {
-        if r='d' {
+        if r=='d' {
             return true
         }else {
             return false
