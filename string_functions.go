@@ -10,6 +10,16 @@ func main() {
     //Here’s a sample of the functions available in strings. Note that these are all functions from package, not methods on the string object itself. This means that we need pass the string in question as the first argument to the function.
     p("Contains:  ", s.Contains("test", "es"))
     p("ContainsAny:  ", s.ContainsAny("test", "abce"))
+    p("ContainsRune:  ", s.ContainsRune("test", 'e'))
+    p("ContainsRune:  ", s.ContainsRune("test中文", '中'))
+    p("Equalold:  ", s.EqualFold("ABC中文", "abC中文"))
+    p("Fields:    ", s.Fields("  foo bar  baz   "))
+    p("FieldsFunc:", s.FieldsFunc("abcdefg", func(r rune) bool {
+        if r='d' {
+            return true
+        }else {
+            return false
+        }}))
     p("Count:     ", s.Count("test", "t"))
     p("HasPrefix: ", s.HasPrefix("test", "te"))
     p("HasSuffix: ", s.HasSuffix("test", "st"))
