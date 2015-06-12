@@ -69,9 +69,9 @@ func main() {
     p("SplitAfterN:", s.SplitAfterN("a,b,c", ",", 2))
     //该函数把s字符串里面的每个单词首字母转化为大写
     p("Title:      ", s.Title("her royal highness"))
+    //该函数把s字符串里面的每个单词转化为小写
     p("ToLower:   ", s.ToLower("TEST"))
     p("ToUpper:   ", s.ToUpper("test"))
-    p()
     //You can find more functions in the strings package docs.
     //Not part of strings but worth mentioning here are the mechanisms for getting the length of a string and getting a character by index.
     p("Len: ", len("hello"))
