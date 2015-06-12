@@ -39,6 +39,10 @@ func main() {
     //该函数主要判断unicode r在s串中第一次出现的位置，如果不存在返回-1
     p("IndexRunc: ", s.IndexRune("中华人民共和国", '人'))
     p("Join:      ", s.Join([]string{"ab", "cd"}, "-"))
+    //该函数主要判断sep串在s串中最后一次出现的位置，如果不存在返回-1
+    p("LastIndex: ", s.LastIndex("chickenkenken", "ken"))
+    //该函数主要判断chars集中任意的一个字符在s串中最后一次出现的位置，如果不存在返回-1
+    p("LastIndexAny:", s.LastIndexAny("chickenkenkenken", "iken"))
     p("Repeat:    ", s.Repeat("a", 5))
     p("Replace:   ", s.Replace("foooo", "o", "0", -1))
     p("Replace:   ", s.Replace("foooo", "o", "0", 2))
