@@ -55,8 +55,9 @@ func main() {
     p("Map:       ", s.Map(func(r rune) rune {return r+1}, "abcd"))
     //该函数返回一个s的重复count字数的字符串
     p("Repeat:    ", s.Repeat("a", 5))
-    p("Replace:   ", s.Replace("foooo", "o", "0", -1))
-    p("Replace:   ", s.Replace("foooo", "o", "0", 2))
+    //该函数实现在s中把old替换为new字符串，替换次数为n，如果n小于0，那么就全部替换
+    p("Replace:   ", s.Replace("foooo", "o", "O", -1))
+    p("Replace:   ", s.Replace("foooo", "o", "O", 2))
     p("Split:     ", s.Split("a-b-c-d-e", "-"))
     p("ToLower:   ", s.ToLower("TEST"))
     p("ToUpper:   ", s.ToUpper("test"))
