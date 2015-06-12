@@ -51,6 +51,8 @@ func main() {
             return false
         }
     }))
+    //该函数以此读取s中的字符，传入mapping函数，然后返回的字符链接起来，说白了就是字符串的每一个字符通过mapping函数的处理，最后返回处理好的字符串，如果处理不正确，那么就抛弃该字符
+    p("Map:       ", s.Map(func(r rune) rune {return r+1}, "abcd"))
     p("Repeat:    ", s.Repeat("a", 5))
     p("Replace:   ", s.Replace("foooo", "o", "0", -1))
     p("Replace:   ", s.Replace("foooo", "o", "0", 2))
