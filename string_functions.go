@@ -43,6 +43,14 @@ func main() {
     p("LastIndex: ", s.LastIndex("chickenkenken", "ken"))
     //该函数主要判断chars集中任意的一个字符在s串中最后一次出现的位置，如果不存在返回-1
     p("LastIndexAny:", s.LastIndexAny("chickenkenkenken", "iken"))
+    //该函数主要判断s中的每一个字符传入函数f，返回符合函数f的最后一个字符的位置，如果都不符合则返回-1
+    p("LastIndexFunc: ", s.LastIndexFunc("testtesttest", func(r rune) bool {
+        if r=='s' {
+            return true
+        }else {
+            return false
+        }
+    }))
     p("Repeat:    ", s.Repeat("a", 5))
     p("Replace:   ", s.Replace("foooo", "o", "0", -1))
     p("Replace:   ", s.Replace("foooo", "o", "0", 2))
