@@ -67,7 +67,8 @@ func main() {
     //该函数s根据sep分割，返回分割之后子字符串的slice,和split一样，只是返回的子字符串保留sep，如果sep为空，那么每一个字符都分割.
     //不同的是仅分为N份,后续的将不再分割
     p("SplitAfterN:", s.SplitAfterN("a,b,c", ",", 2))
-
+    //该函数把s字符串里面的每个单词首字母转化为大写
+    p("Title:      ", s.Title("her royal highness"))
     p("ToLower:   ", s.ToLower("TEST"))
     p("ToUpper:   ", s.ToUpper("test"))
     p()
