@@ -60,8 +60,13 @@ func main() {
     p("Replace:   ", s.Replace("foooo", "o", "O", 2))
     //该函数s根据sep分割，返回分割之后子字符串的slice，如果sep为空，那么每一个字符都分割
     p("Split:     ", s.Split("a-b-c-d-e", "-"))
+    //该函数s根据sep分割，返回分割之后子字符串的slice，返回的子串的长度如n的定义，如果sep为空，那么每一个字符都分割
+    p("SplitN:    ", s.SplitN("a,b,c", ",", 2))
     //该函数s根据sep分割，返回分割之后子字符串的slice,和split一样，只是返回的子字符串保留sep，如果sep为空，那么每一个字符都分割
     p("SplitAfter:", s.SplitAfter("a,b,c", ","))
+    //该函数s根据sep分割，返回分割之后子字符串的slice,和split一样，只是返回的子字符串保留sep，如果sep为空，那么每一个字符都分割.
+    //不同的是仅分为N份,后续的将不再分割
+    p("SplitAfterN:", s.SplitAfterN("a,b,c", ",", 2))
 
     p("ToLower:   ", s.ToLower("TEST"))
     p("ToUpper:   ", s.ToUpper("test"))
