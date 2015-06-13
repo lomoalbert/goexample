@@ -83,6 +83,8 @@ func main() {
             return false
         }
     }))
+    //该函数把s字符串开头或者结尾里面空白符('\t', '\n', '\v', '\f', '\r', ' ', U+0085 (NEL), U+00A0 (NBSP))全部过滤掉，返回过滤之后的字符串
+    p("TrimSpace:  ", s.TrimSpace(" \t\n a lone gopher \n\t\r\n"))
     //You can find more functions in the strings package docs.
     //Not part of strings but worth mentioning here are the mechanisms for getting the length of a string and getting a character by index.
     p("Len: ", len("hello"))
