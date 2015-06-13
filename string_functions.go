@@ -154,6 +154,12 @@ func (r *Replacer) Replace(s string) string // 把字符串替换为oldnew定义
 func (r *Replacer) WriteString(w io.Writer, s string) (n int, err error) //替换之后的字符串写入到w之中，返回写入的数量
 应用示例，下面代码来自于beego的模板替换：
     */
+
+    patterns := []string{"abc", "efg"}
+    replacer := s.NewReplacer(patterns...)
+    format := replacer.Replace("abc is abc is abc")
+    fmt.Println(format)
+    //efg is efg is efg
 }
 /*
 Contains:   true
