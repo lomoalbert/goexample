@@ -74,7 +74,7 @@ func main() {
     p("ToUpper:   ", s.ToUpper("test"))
 
     //该函数把s字符串开头或者结尾里面包含字符集的字符全部过滤掉，返回过滤之后的字符串
-    p("Trim:      ", s.Trim(" !!! Achtung !!! ", "! ")
+    p("Trim:      ", s.Trim(" !!! Achtung !!! ", "! "))
     //You can find more functions in the strings package docs.
     //Not part of strings but worth mentioning here are the mechanisms for getting the length of a string and getting a character by index.
     p("Len: ", len("hello"))
