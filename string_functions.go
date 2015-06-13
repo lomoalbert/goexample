@@ -137,21 +137,63 @@ func main() {
     }
     fmt.Println(rn)    //35874
     fmt.Println(size)  //3
+    /*
+    type Replacer
+这是一个字符串替换的对象
+
+func NewReplacer(oldnew ...string) *Replacer
+参数列表
+
+oldnew是一个slice，是一个需要替换的字符串和新的字符串的配对出现
+返回参数
+
+Replacer返回一个替换对象
+Replacer方法列表
+
+func (r *Replacer) Replace(s string) string // 把字符串替换为oldnew定义的
+func (r *Replacer) WriteString(w io.Writer, s string) (n int, err error) //替换之后的字符串写入到w之中，返回写入的数量
+应用示例，下面代码来自于beego的模板替换：
+    */
 }
 /*
 Contains:   true
+ContainsAny:   true
+ContainsRune:   true
+ContainsRune:   true
 Count:      2
+Equalold:   true
+Fields:     [foo bar baz]
+FieldsFunc: [abc efg]
 HasPrefix:  true
 HasSuffix:  true
 Index:      1
+IndexAny:   1
+IndexFunc:  2
+IndexRunc:  6
 Join:       ab-cd
+LastIndex:  10
+LastIndexAny: 15
+LastIndexFunc:  10
+Map:        bcde
 Repeat:     aaaaa
-Replace:    f00
-Replace:    f0o
+Replace:    fOOOO
+Replace:    fOOoo
 Split:      [a b c d e]
+SplitN:     [a b,c]
+SplitAfter: [a, b, c]
+SplitAfterN: [a, b,c]
+Title:       Her Royal Highness
 ToLower:    test
 ToUpper:    TEST
-
-Len:  5
-Char: 101
+Trim:       Achtung
+TrimFunc:    abcd
+TrimSpace:   a lone gopher
+12
+[73 32 97 109 32 97 115 116]
+8
+[109 32 97 115 116 97 232 176]
+8
+97
+35874
+3
 */
