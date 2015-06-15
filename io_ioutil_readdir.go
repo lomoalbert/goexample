@@ -18,7 +18,7 @@ error 返回读取是否成功
 
 */
 func main() {
-    dir_list, e := ioutil.ReadDir("d:/goTest")
+    dir_list, e := ioutil.ReadDir(".")
     if e != nil {
         fmt.Println("read dir error")
         return
