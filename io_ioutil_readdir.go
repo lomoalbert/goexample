@@ -24,6 +24,6 @@ func main() {
         return
     }
     for i, v := range dir_list {
-        fmt.Println(i, "=", v.Name())
+        fmt.Println(i, "=", v.Name(), v)
     }
 }
