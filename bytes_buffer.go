@@ -3,12 +3,15 @@ import (
     "bytes"
     "fmt"
     "os"
+    "io"
 )
 func main() {
     bb := bytes.NewBuffer([]byte("Hello World!"))
     b := make([]byte, 32)
 
-    bb.Read(b)
+    //bb.Read(b)
+    n, err := io.ReadFull(bb, b)
+    fmt.Println(n, err)
     fmt.Printf("%s\n", b) // Hello World!
 
     bb.WriteString("New Data!\n")
