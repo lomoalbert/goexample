@@ -5,7 +5,19 @@ import (
     "fmt"
     "os"
 )
+/*
+func (l *LimitedReader) Read(p []byte) (n int, err error)
+参数：
 
+p 存放读取结果的比特数组
+返回值：
+
+n 读取的字节数
+err 读取是否成功；nil代表成功
+功能说明：
+
+在LimitedReader中读取数据，并存入p中；每次读取后，限定字节数=限定字节数-len(p)；若len(p)>限定字节数，len(p):=限定字节数；若限定字节数<=0,返回io.EOF，所以io.EOF代表读取完毕
+*/
 func main() {
     reader, _ := os.Open("readFile.txt")
     limitReader := io.LimitReader(reader, 20)
