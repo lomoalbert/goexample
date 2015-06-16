@@ -21,8 +21,8 @@ err 拷贝是否成功；nil代表拷贝成功
 示例： package main
 */
 func main() {
-    srcFile, _ := os.Open("copySrc.txt")
-    destFile, _ := os.Create("copyDest.txt")
+    srcFile, _ := os.Open("io_copy.go")
+    destFile, _ := os.Create("io_copy.txt")
     written, err := io.Copy(destFile, srcFile)
     if err == nil {
         fmt.Println("Copy Success! total", written, "bytes")
