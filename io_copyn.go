@@ -25,8 +25,8 @@ io.EOF：当n>src字节数时，拷贝src全部数据并返回src字节数
 io.ErrShortWrite:写入数据不等于读取数据
 */
 func main() {
-    srcFile, _ := os.Open("copySrc.txt")
-    destFile, _ := os.Create("copyDest.txt")
+    srcFile, _ := os.Open("io_copyn.go")
+    destFile, _ := os.Create("io_copyn.txt")
     written, err := io.CopyN(destFile, srcFile, 15)
     if err == nil {
         fmt.Println("Copy Success! total", written, "bytes")
