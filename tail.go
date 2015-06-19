@@ -17,7 +17,7 @@ func args2config() (tail.Config, int64) {
     flag.IntVar(&maxlinesize, "max", 0, "max line size")
     flag.BoolVar(&config.Follow, "f", false, "wait for additional data to be appended to the file")
     flag.BoolVar(&config.ReOpen, "F", false, "follow, and track file rename/rotation")
-    flag.BoolVar(&config.Poll, "p", false, "use polling, instead of inotify")
+    flag.BoolVar(&config.Poll, "p", true, "use polling, instead of inotify")
     flag.Parse()
     if config.ReOpen {
         config.Follow = true
