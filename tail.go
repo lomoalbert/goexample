@@ -61,4 +61,5 @@ func tailFile(filename string, config tail.Config, done chan bool) {
     if err != nil {
         fmt.Println(err)
     }
+
 }
