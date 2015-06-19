@@ -15,5 +15,5 @@ func main() {
     fmt.Println("numb:", *numbPtr)
     fmt.Println("fork:", *boolPtr)
     fmt.Println("svar:", svar)
-    fmt.Println("", flag.Arg(0), flag.NArg(), flag.Args(), flag.NFlag())
+    fmt.Println("tail", flag.Arg(0), flag.NArg(), flag.Args(), flag.NFlag())
 }
