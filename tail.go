@@ -42,7 +42,7 @@ func main() {
         go tailFile(filename, config, done)
     }
 
-    for range flag.Args() {
+    for _, _ = range flag.Args() {
         <-done
     }
 }
