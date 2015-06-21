@@ -45,5 +45,4 @@ this is string
 1
 -------------------
 yejianfeng
-
 */
