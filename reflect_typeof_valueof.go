@@ -16,6 +16,7 @@ func (this *MyStruct)GetName() string {
 
 
 func main() {
+    //反射用于获取对象的type和value两个属性
     s := "this is string"
     fmt.Println("reflect.TypeOf(string):", reflect.TypeOf(s))
     fmt.Println("reflect.ValueOf(string)", reflect.ValueOf(s))
@@ -51,7 +52,7 @@ func main() {
     b := reflect.ValueOf(a).MethodByName("GetName").Call([]reflect.Value{})
     fmt.Println(b)
 
-
+    //静态类型的value的type是原类型
     type Myint int
     var myint Myint = 4
     fmt.Println("type of myint:", reflect.TypeOf(myint))
@@ -60,14 +61,25 @@ func main() {
 }
 
 /*
-/tmp/reflect_typeof_valueof.go0go
-string
--------------------
-this is string
-<float64 Value>
--------------------
-1
--------------------
-yejianfeng
-
+reflect.TypeOf(string): string
+reflect.ValueOf(string) this is string
+reflect.TypeOf(float64): float64
+reflect.ValueOf(float64): <float64 Value>
+kind is float64: true
+float64 value: 3.4
+canset of float64: false
+type of *float64: *float64
+canset of *float64: false
+canset of elem of *float64: true
+after setfloat float64 value: 4.3
+reflect.TypeOf(int): int
+reflect.ValueOf(int): <int Value>
+kind is int: true
+int value: 3
+reflect.TypeOf(MyStruct): *main.MyStruct
+reflect.ValueOf(MyStruct): <*main.MyStruct Value>
+typ.NumMethod(): 1
+[Mystruct的name]
+type of myint: main.Myint
+type of value of myint: int
 */
