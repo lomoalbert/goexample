@@ -25,6 +25,14 @@ func main() {
     fmt.Println("reflect.ValueOf(float64):", reflect.ValueOf(x))
     fmt.Println("kind is float64:", reflect.TypeOf(x).Kind() == reflect.Float64)
     fmt.Println("float64 value:", reflect.ValueOf(x).Float())
+    fmt.Println("canset of float64:", reflect.ValueOf(x).CanSet())
+    fmt.Println("type of *float64:", reflect.TypeOf(&x))
+    fmt.Println("canset of *float64:", reflect.ValueOf(&x).CanSet())
+    p := reflect.ValueOf(&x)
+    v := p.Elem()
+    fmt.Println("canset of elem of *float64:", v.CanSet())
+    v.SetFloat(4.3)
+    fmt.Println("after setfloat float64 value:", x)
 
 
     var i int = 3
