@@ -23,6 +23,7 @@ func main() {
     html[2] = []byte("script")
     html[3] = "style"
     html[4] = "head"
+    //断言方式
     for index, element := range html {
         if value, ok := element.(string); ok {
             fmt.Printf("html[%d] is a string and its value is %s\n", index, value)
@@ -30,5 +31,17 @@ func main() {
             fmt.Printf("html[%d] is a []byte and its value is %s\n", index, string(value))
         }
     }
-
+    //switch方式
+    for index, element := range html {
+        switch value := element.(type) {
+            case string:
+            fmt.Printf("html[%d] is a string and its value is %s\n", index, value)
+            case []byte:
+            fmt.Printf("html[%d] is a []byte and its value is %s\n", index, string(value))
+            case int:
+            fmt.Printf("invalid type\n")
+            default:
+            fmt.Printf("unknown type\n")
+        }
+    }
 }
