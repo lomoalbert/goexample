@@ -15,23 +15,24 @@ func (this *MyStruct)GetName() string {
 
 func main() {
     s := "this is string"
-    fmt.Println(reflect.TypeOf(s))
-    fmt.Println("-------------------")
+    fmt.Println("reflect.TypeOf(string):", reflect.TypeOf(s))
 
-    fmt.Println(reflect.ValueOf(s))
+    fmt.Println("reflect.ValueOf(string)", reflect.ValueOf(s))
     var x float64 = 3.4
-    fmt.Println(reflect.ValueOf(x))
-    fmt.Println("-------------------")
+    fmt.Println("reflect.TypeOf(float64):", reflect.TypeOf(x))
+    fmt.Println("reflect.ValueOf(float64):", reflect.ValueOf(x))
+    fmt.Println("kind is float64:", reflect.TypeOf(x).Kind() == reflect.Float64)
+    fmt.Println("float64 value:", reflect.ValueOf(x).Float())
 
     a := new(MyStruct)
-    a.name = "yejianfeng"
+    a.name = "Mystruct的name"
+    fmt.Println("reflect.TypeOf(MyStruct):", reflect.TypeOf(a))
+    fmt.Println("reflect.ValueOf(MyStruct):", reflect.ValueOf(a))
+
     typ := reflect.TypeOf(a)
-
-    fmt.Println(typ.NumMethod())
-    fmt.Println("-------------------")
-
+    fmt.Println("typ.NumMethod():", typ.NumMethod())
     b := reflect.ValueOf(a).MethodByName("GetName").Call([]reflect.Value{})
-    fmt.Println(b[0])
+    fmt.Println(b)
 
 }
 
