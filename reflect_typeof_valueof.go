@@ -22,10 +22,14 @@ func main() {
     fmt.Println("reflect.ValueOf(string)", reflect.ValueOf(s))
 
     var x float64 = 3.4
+    //获取float的type与value
     fmt.Println("reflect.TypeOf(float64):", reflect.TypeOf(x))
     fmt.Println("reflect.ValueOf(float64):", reflect.ValueOf(x))
+    //对type的类型进行判断
     fmt.Println("kind is float64:", reflect.TypeOf(x).Kind() == reflect.Float64)
+    //对type为float的对象的value直接取float值
     fmt.Println("float64 value:", reflect.ValueOf(x).Float())
+    //float对象在取值时会复制值,随意无法对原值进行修改
     fmt.Println("canset of float64:", reflect.ValueOf(x).CanSet())
     fmt.Println("type of *float64:", reflect.TypeOf(&x))
     fmt.Println("canset of *float64:", reflect.ValueOf(&x).CanSet())
