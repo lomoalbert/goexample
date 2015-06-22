@@ -31,8 +31,10 @@ func main() {
     fmt.Println("float64 value:", reflect.ValueOf(x).Float())
     //float对象在取值时会复制值,随意无法对原值进行修改
     fmt.Println("canset of float64:", reflect.ValueOf(x).CanSet())
+    //即便使用指针也同样可能无法修改值
     fmt.Println("type of *float64:", reflect.TypeOf(&x))
     fmt.Println("canset of *float64:", reflect.ValueOf(&x).CanSet())
+    //除非使用value的elem, elem是可以修改值
     p := reflect.ValueOf(&x)
     v := p.Elem()
     fmt.Println("canset of elem of *float64:", v.CanSet())
