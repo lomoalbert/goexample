@@ -14,7 +14,11 @@ func (this *MyStruct)GetName() string {
 }
 
 
-
+/*
+从接口值到反射对象的反射。
+从反射对象到接口值的反射。
+为了修改反射对象，其值必须可设置。
+*/
 func main() {
     //反射用于获取对象的type和value两个属性
     s := "this is string"
