@@ -1,5 +1,5 @@
 package main
-
+//todo: io.Reader io.Writer
 /*
 type Reader interface {
     Read(p []byte) (n int, err error)
