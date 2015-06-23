@@ -11,4 +11,5 @@ type Writer interface {
 */
 func main() {
 
+    type Myinterface
 }
