@@ -3,6 +3,7 @@ import "fmt"
 import (
     "io"
 )
+// todo: interface的用途描述
 /*
 type Reader interface {
     Read(p []byte) (n int, err error)
