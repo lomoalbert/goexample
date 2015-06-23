@@ -1,38 +1,26 @@
 package main
-import "fmt"
-import (
-    "io"
-)
 // todo: interface的用途描述
-/*
-type Reader interface {
-    Read(p []byte) (n int, err error)
+import "fmt"
+type S struct {
+    i int
 }
-
-type Writer interface {
-    Write(p []byte) (n int, err error)
+func (p S) Get() int {
+    return p.i
 }
-*/
-
-type Myinterface struct {
-    readstring string
-    writestring string
+func (p S) Put(v int) {
+    p.i = v
 }
-
-func (mi Myinterface) Read(p []byte) (int, error) {
-    p = []byte(mi.readstring)
-    return len(p), nil
+type I interface{
+    Get() int
+    Put(int)
 }
-
-func (mi Myinterface) Write(p []byte) (n int, err error) {
-    mi.writestring = string(p)
-    return len(p), nil
+func f(p I) {
+    fmt.Println(p.Get())
+    p.Put(1)
 }
 func main() {
+    var s S
+    f(s)
+    fmt.Println(s.Get())
 
-
-    mi := Myinterface{readstring:"readingstring", writestring : "writingstring"}
-    b := make([]byte, 10)
-    io.ReadFull(mi, b)
-    fmt.Println(b)
 }
