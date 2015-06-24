@@ -1,4 +1,7 @@
 package main
+/*
+IPizzaCooker接口包含prepare bake cut 三个方法,任何支持这三个方法的对象均可作为IPizzaCooker接口参数执行cookOnePizza
+*/
 
 type Pizza struct {
 }
@@ -18,11 +21,10 @@ func cookOnePizza(ipc IPizzaCooker) *Pizza {
 }
 
 type PizzaDefaultCooker struct {
+...
 }
 
-func (this *PizzaDefaultCooker) CookOnePizza() *Pizza {
-    return cookOnePizza(this)
-}
+
 func (this *PizzaDefaultCooker) Prepare(*Pizza) {
     //....default prepare pizza
 }
@@ -39,9 +41,7 @@ type MyPizzaCooker struct {
     PizzaDefaultCooker
 }
 
-func (this *MyPizzaCooker) CookOnePizza() *Pizza {
-    return cookOnePizza(this)
-}
+
 func (this *MyPizzaCooker) Prepare(*Pizza) {
     //....bake pizza use my style
 }
@@ -53,7 +53,9 @@ func (this *MyPizzaCooker) Cut(*Pizza) {
 }
 
 func main() {
-    var cooker MyPizzaCooker
-    p := cooker.CookOnePizza()
+    var cooker PizzaDefaultCooker
+    p := cookOnePizza(cooker)
+    var mycooker MyPizzaCooker
+    m := cookOnePizza(mycooker)
     //....
 }
