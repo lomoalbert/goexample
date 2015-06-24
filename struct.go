@@ -1,10 +1,14 @@
 package main
-import "fmt"
+import (
+    "fmt"
+)
 //This person struct type has name and age fields.
 type person struct {
     name string
     age  int
 }
+
+
 func main() {
     //This syntax creates a new struct.
     fmt.Println(person{"Bob", 20})
@@ -23,4 +27,6 @@ func main() {
     //Structs are mutable.
     sp.age = 51
     fmt.Println(sp.age)
+
+
 }

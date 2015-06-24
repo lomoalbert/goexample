@@ -1,5 +1,5 @@
 package main
-// todo: interface的用途描述
+
 import "fmt"
 type S struct {
     i int
