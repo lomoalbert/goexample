@@ -1,9 +1,23 @@
 package main
+import "fmt"
 /*
 接口的元素是方法,既可以有0个,也可以有多个
 实现了接口指定的方法也就实现了接口,就可以代入到以该接口为参数的运算中.
 包含0个方法的接口为空接口.任何对象均实现空接口,空接口对象可以接收任意类型的值
 */
-func main() {
 
+type emptyinsterface interface {
+}
+
+func main() {
+    var v emptyinsterface
+    // var v interface{}
+    v = 10
+    fmt.Printf("now EmptyInterface is of type %T\n", v)
+    v = "string"
+    fmt.Printf("now EmptyInterface is of type %T\n", v)
+    v = 'a'
+    fmt.Printf("now EmptyInterface is of type %T\n", v)
+    v = []byte("byte")
+    fmt.Printf("now EmptyInterface is of type %T\n", v)
 }
