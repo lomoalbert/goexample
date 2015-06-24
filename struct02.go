@@ -2,7 +2,7 @@ package main
 import (
     "fmt"
 )
-//struct的声明及初始化
+//This person struct type has name and age fields.
 type person struct {
     name string
     age  int
