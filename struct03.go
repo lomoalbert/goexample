@@ -26,8 +26,8 @@ func (p *person) growup02() {
 
 func main() {
     mark := person{"mark", 25}
-    mark.growup01() //{mark 26}
-    fmt.Println(mark)//{mark 25}
-    mark.growup02()//&{mark 26}
-    fmt.Println(mark)//{mark 26}
+    mark.growup01()     //{mark 26}
+    fmt.Println(mark)   //{mark 25}
+    mark.growup02()     //&{mark 26}
+    fmt.Println(mark)   //{mark 26}
 }
