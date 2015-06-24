@@ -8,23 +8,19 @@ type person struct {
     age  int
 }
 
-//struct
-func (p person) growup01() {
-    p.age+=1
-    fmt.Println(p)
+func (p person) sayname() {
+    fmt.Println(p.name)
 }
 
-
-//如果一个method的receiver是*T，调用时，可以传递一个T类型的实例变量V，而不必用&V去调用这个method
-func (p *person) growup02() {
-    p.age+=1
-    fmt.Println(p)
+type student struct {
+    person //studen继承person的同时也继承了person的方法
+    school string
 }
 
 func main() {
     mark := person{"mark", 25}
-    mark.growup01()     //{mark 26}
-    fmt.Println(mark)   //{mark 25}
-    mark.growup02()     //&{mark 26}
-    fmt.Println(mark)   //{mark 26}
+    mark.sayname()
+    mark_student := student{mark, "Computer Science"}
+    mark_student.sayname()
+    mark_student.person.sayname()
 }
