@@ -2,10 +2,7 @@ package main
 import (
     "fmt"
 )
-//struct的方法
-//Reciver 默认以值传递，而非引用传递，还可以是指针
-//func (r ReciverType) funcName(params) (results) { ... }
-//指针作为Receiver会对实例对象的内容发生操作，而普通类型作为Receiver仅仅是以副本作为操作对象，而不对原实例对象发生操作
+//struct方法的继承
 type person struct {
     name string
     age  int

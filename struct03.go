@@ -11,7 +11,7 @@ type person struct {
     age  int
 }
 
-//struct
+//普通类型作为Receiver仅仅是以副本作为操作对象，而不对原实例对象发生操作
 func (p person) growup01() {
     p.age+=1
     fmt.Println(p)
