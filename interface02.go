@@ -38,9 +38,7 @@ func (this *PizzaDefaultCooker) Cut(*Pizza) {
 
 
 
-type MyPizzaCooker struct {
-    PizzaDefaultCooker
-}
+type MyPizzaCooker PizzaDefaultCooker
 
 
 func (this *MyPizzaCooker) Prepare(*Pizza) {
