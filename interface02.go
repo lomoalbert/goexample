@@ -1,5 +1,6 @@
 package main
 /*
+任何实现某接口的所有方法的对象,均可作为接口参数运行相关函数
 IPizzaCooker接口包含prepare bake cut 三个方法,任何支持这三个方法的对象均可作为IPizzaCooker接口参数执行cookOnePizza
 */
 

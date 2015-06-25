@@ -1,6 +1,7 @@
 package main
-
+// 接口的标准用法
 import "fmt"
+
 type S struct {
     i int
 }
