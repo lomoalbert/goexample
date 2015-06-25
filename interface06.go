@@ -7,7 +7,13 @@ import "fmt"
 
 func main() {
     var a interface{}
-    a = 1
+    a = int8(1)
+
+    if value, ok := a.(int8); ok { //断言a值的类型,可返回该类型的a值.
+        fmt.Println("I guessed I am int8, and I am right.")
+        fmt.Println("value is ", value)
+    }
+
     switch a.(type){// a.(type) 仅适用于switch下,并且a必须为接口类型
         case int:
         fmt.Println("I am int.")
