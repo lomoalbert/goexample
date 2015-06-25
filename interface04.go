@@ -3,8 +3,10 @@ import "fmt"
 /*
 接口的赋值
 接口赋值在Go语言中分为两种情况: 1.将对象实例赋值给接口 2.将一个接口赋值给另外一个接口
-*/
 
+
+将对象实例赋值给接口
+*/
 
 type LesssAdder interface {
     Less(b Integer) bool
