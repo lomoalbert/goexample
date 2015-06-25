@@ -6,6 +6,14 @@ import (
 //Reciver 默认以值传递，而非引用传递，还可以是指针
 //func (r ReciverType) funcName(params) (results) { ... }
 //指针作为Receiver会对实例对象的内容发生操作，而普通类型作为Receiver仅仅是以副本作为操作对象，而不对原实例对象发生操作
+/*
+接口去调用结构体的方法时需要针对接受者的不同去区分，即：
+
+接收者是指针*T时，接口实例必须是指针
+接收者是值 T时，接口实力可以是指针也可以是值
+接口的定义和类型转换与接收者的定义是关联的
+*/
+
 type person struct {
     name string
     age  int
