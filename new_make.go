@@ -19,8 +19,8 @@ import (
 */
 
 func main() {
-    otherInt := 1
-    someInt := new(int)
+    someInt := 1
+    otherInt := new(int)
     fmt.Println(someInt, reflect.TypeOf(someInt))
     fmt.Println(otherInt, reflect.TypeOf(otherInt))
 
