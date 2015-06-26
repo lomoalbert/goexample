@@ -20,13 +20,13 @@ import (
 
 func main() {
     otherInt := 1
-    fmt.Println(otherInt, reflect.TypeOf(otherInt))
     someInt := new(int)
     fmt.Println(someInt, reflect.TypeOf(someInt))
+    fmt.Println(otherInt, reflect.TypeOf(otherInt))
 
     someSlice := []int{0, 0, 0, 0, 0}
-    fmt.Println(someSlice, reflect.TypeOf(someSlice))
     otherSlice := make([]int, 5)
+    fmt.Println(someSlice, reflect.TypeOf(someSlice))
     fmt.Println(otherSlice, reflect.TypeOf(otherSlice))
 
 
