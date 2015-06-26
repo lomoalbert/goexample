@@ -15,12 +15,15 @@ type student struct {
 }
 
 func main() {
-    mark := student{person{"mark", 25}, "Computer Science"}
+    mark := student{person{"mark", 25}, "Computer Science"}//匿名继承初始化必须使用被继承struct
     fmt.Println(mark)
-
+    fmt.Println(mark.name,mark.age,mark.school)//匿名继承，可直接使用被继承struct的属性
+    
     mark.school="high school"
     mark.person=person{"mark", 26}
     mark.person.age += 1
+    fmt.Println(mark)
+    mark.age+=1
     fmt.Println(mark)
 
 
