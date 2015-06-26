@@ -1,4 +1,8 @@
 package main
+import (
+    "fmt"
+    "reflect"
+)
 //new 的作用是初始化一个指向类型的指针(*T)，make 的作用是为 slice，map 或 chan 初始化并返回引用(T)。
 
 //func new(Type) *Type
@@ -15,5 +19,9 @@ package main
 */
 
 func main() {
+    someInt := new(int)
+    fmt.Println(someInt, reflect.TypeOf(someInt))
+    otherInt := 1
+    fmt.Println(otherInt, reflect.TypeOf(otherInt))
 
 }
