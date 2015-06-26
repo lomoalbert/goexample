@@ -24,4 +24,8 @@ func main() {
     someInt := new(int)
     fmt.Println(someInt, reflect.TypeOf(someInt))
 
+    someSlice := []int{1, 2, 3, 4, 5}
+    fmt.Println(someSlice, reflect.TypeOf(someSlice))
+
+
 }
