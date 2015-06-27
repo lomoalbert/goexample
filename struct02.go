@@ -10,12 +10,17 @@ type person struct {
 }
 
 type student struct {
-    person // 匿名函数,实现继承person结构
+    person // 匿名字段,实现继承person的所有字段
     school string
 }
 
+type teacher struct {
+    person // 匿名字段
+    age string // 与匿名字段的age属性同名时,teacher.age与teacher.person.age为不同的两个值
+}
+
 func main() {
-    mark := student{person{"mark", 25}, "Computer Science"}//匿名继承初始化必须使用被继承struct
+    mark := student{person{"mark", 25}, "Computer Science"}//匿名继承初始化必须使用被继承struct赋值
     fmt.Println(mark)
     fmt.Println(mark.name,mark.age,mark.school)//匿名继承，可直接使用被继承struct的属性
     
