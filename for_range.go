@@ -9,7 +9,7 @@ func main() {
     for i, v := range list {
         fmt.Println(i, v)
     }
-
+    //可以只获取序号,然后在循环内获取值
     for i := range list {
         fmt.Println(i, list[i])
     }
