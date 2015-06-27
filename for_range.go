@@ -3,40 +3,37 @@ package main
 import "fmt"
 
 func main() {
-    // 初始化i为0；每一次循环之后检查i是否小于5；让i加1
-    for i := 0; i < 5; i++ {
-        fmt.Println("i现在的值为：", i)
+    //
+    list := [...]rune{'a', 'b', 'c'}
+    for i, v := range list {
+        fmt.Println(i, v)
     }
 
-    // for ;; 定义的变量仅限循环中使用
-    for i := 0; i < 5; {
-        fmt.Println("i现在的值为：", i)
-        i+=1
-    }
-    //fmt.Println(i) //undefined: i
-
-    // for 以外定义的变量正常使用
-    i := 0
-    for ; i<5; i++ {
-        fmt.Println("i现在的值为：", i)
-    }
-    fmt.Println("i最终的值为：", i)
-
-    //for 包含的while的功能
-    for {
-        if i>7 {
-            fmt.Println("i最终的值为：", i)
-            break //跳出循环
-        }else {
-            fmt.Println("i现在的值为：", i)
-            i+=1
-            continue //结束本次循环,直接转到下次循环
-            i+=10 //continue 后的代码不会执行
-        }
+    for i := range list {
+        fmt.Println(i, list[i])
     }
 
-    // 多变量条件
-    for i, j, s := 0, 5, "a"; i < 3 && j < 100 && s != "aaaaa"; i, j, s = i+1, j+1, s + "a" {
-        fmt.Printf("i=%d, j=%d, s=%s\n", i, j, s)
+    for range list {
+        fmt.Println("*")
     }
+
+    slice := []byte("string")
+    for i, v := range slice {
+        fmt.Println(i, slice[i], v)
+    }
+
+    //map的key:alue是无序的
+    map_ := map[string]string{"monday":"1", "sundy":"0"}
+    for k, v := range map_ {
+        fmt.Println(k, v)
+    }
+
+    for k := range map_ {
+        fmt.Println(k, map_[k])
+    }
+
+    for range map_ {
+        fmt.Println("*")
+    }
+
 }
