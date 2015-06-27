@@ -17,7 +17,7 @@ func main() {
     for range list {
         fmt.Println("*")
     }
-
+    // slice map 与list的for rang是相同的.
     slice := []byte("string")
     for i, v := range slice {
         fmt.Println(i, slice[i], v)
