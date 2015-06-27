@@ -16,6 +16,7 @@ func main() {
     }()
     //We’ll use select to await both of these values simultaneously, printing each one as it arrives.
     for i := 0; i < 2; i++ {
+        //在存在default时select是非阻塞的, 无default时则阻塞直到某个channel可读
         select {
         case msg1 := <-c1:
             fmt.Println("received", msg1)
