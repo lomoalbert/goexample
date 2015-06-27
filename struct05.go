@@ -11,12 +11,12 @@ type person struct {
 
 type student person
 
-p为指针, 则可传入person, 也可以传入*person, 效果同为*person.所以函数内的操作可以改变原对象
+//p为指针, 则可传入person, 也可以传入*person, 效果同为*person.所以函数内的操作可以改变原对象
 func (p *person)sayname() {
     fmt.Println(p.name)
 }
 
-p为普通对象, 则仅可传入非指针对象的拷贝, 无法修改原对象
+//p为普通对象, 则仅可传入非指针对象的拷贝, 无法修改原对象
 func (s student)sayage() {
     fmt.Println(s.age)
 }
