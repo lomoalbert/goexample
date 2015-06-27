@@ -22,6 +22,19 @@ func main() {
     }
     fmt.Println("i最终的值为：", i)
 
+    //for 包含的while的功能
+    for {
+        if i>7 {
+            break //跳出循环
+        }else {
+            fmt.Println("i现在的值为：", i)
+            i+=1
+            continue //结束本次循环,直接转到下次循环
+            i+=10 //continue 后的代码不会执行
+        }
+    }
+
+    // 多变量条件
     for i, j, s := 0, 5, "a"; i < 3 && j < 100 && s != "aaaaa"; i, j, s = i+1, j+1, s + "a" {
         fmt.Printf("i=%d, j=%d, s=%s\n", i, j, s)
     }
