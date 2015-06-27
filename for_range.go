@@ -13,7 +13,7 @@ func main() {
     for i := range list {
         fmt.Println(i, list[i])
     }
-
+    //也可以不获取序号和值,仅仅循环len()次
     for range list {
         fmt.Println("*")
     }
