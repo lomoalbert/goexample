@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-    //
+    //list slice map 均可使用for range
     list := [...]rune{'a', 'b', 'c'}
     for i, v := range list {
         fmt.Println(i, v)
