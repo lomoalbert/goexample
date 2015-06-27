@@ -9,11 +9,13 @@ func main() {
     }
 
     // for ;; 定义的变量仅限循环中使用
-    for i := 0; i < 5; i++ {
+    for i := 0; i < 5; {
         fmt.Println("i现在的值为：", i)
+        i+=1
     }
     //fmt.Println(i) //undefined: i
 
+    // for 以外定义的变量正常使用
     i := 0
     for ; i<5; i++ {
         fmt.Println("i现在的值为：", i)
