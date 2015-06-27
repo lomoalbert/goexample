@@ -16,7 +16,7 @@ type student struct {
 
 type teacher struct {
     person // 匿名字段
-    age string // 与匿名字段的age属性同名时,teacher.age与teacher.person.age为不同的两个值
+    age int // 与匿名字段的age属性同名时,teacher.age与teacher.person.age为不同的两个值
 }
 
 func main() {
@@ -31,6 +31,9 @@ func main() {
     mark.age+=1
     fmt.Println(mark)
 
-
+    Lily := teacher{person{"Lily", 20}, 10}
+    fmt.Println(Lily)
+    fmt.Println(Lily.age)  //当struct的字段与继承的字段重名时,直接调用的将是struct自身的字段
+    fmt.Println(Lily.person.age) //而继承的字段由于重名,必须使用完整的继承关系调用
 
 }
