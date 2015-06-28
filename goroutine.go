@@ -12,4 +12,5 @@ func main() {
     c := make(chan bool)
     go wait(c, 5*time.Second)
     <-c
+
 }
