@@ -9,7 +9,7 @@ func wait(c chan bool, t time.Duration) {
 }
 
 func main() {
-    c := make(chan bool, 1)
+    c := make(chan bool)
     go wait(c, 5*time.Second)
     <-c
 }
