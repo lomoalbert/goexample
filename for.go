@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+//普通用法 for init; condition;post {}
+//while用法 for condition {}
+//死循环 for {}
 func main() {
     // 初始化i为0；每一次循环之后检查i是否小于5；让i加1
     for i := 0; i < 5; i++ {
