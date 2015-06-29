@@ -20,12 +20,14 @@ func main() {
 
     // for 以外定义的变量正常使用
     i := 0
-    for ; i<5; i++ {
+    //包含的while的功能
+    for i<5 {
+        i+=1
         fmt.Println("i现在的值为：", i)
     }
     fmt.Println("i最终的值为：", i)
 
-    //for 包含的while的功能
+    //for 循环
     for {
         if i>7 {
             fmt.Println("i最终的值为：", i)
