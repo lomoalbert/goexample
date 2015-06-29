@@ -2,7 +2,10 @@ package main
 
 import "fmt"
 /*
-
+for index,char := range string {}
+for index,value := range array {}
+for index,value := range slice {}
+for key,value := range map {}
 */
 func main() {
     //list slice map 均可使用for range
