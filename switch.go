@@ -18,9 +18,25 @@ func main() {
     }
     fmt.Println(cl)
 
-    // fallthrough 忽略下一个case的判断语句 而直接执行
+    // switch没有表达式时 与 if-else是相同的
+    // switch默认带break效果
     var i int
     i = 3
+    switch {
+        case i>0:
+        fmt.Println("i > 0")
+        case i>1:
+        fmt.Println("i > 1")
+        case i>2:
+        fmt.Println("i > 2")
+        case i>3:
+        fmt.Println("i > 3")
+        case i>4:
+        fmt.Println("i > 4")
+    }
+
+
+    // fallthrough 忽略下一个case的判断语句 而直接执行
     switch {
         case i>0:
         fmt.Println("i > 0")
@@ -47,5 +63,16 @@ func main() {
         default:
         cl = "Other Char"
     }
+    fmt.Println(cl)
 
+    //同样switch可以没有表达式，在 Case 中使用布尔表达式，这样形如 if-else
+    switch {
+        case '0' <= ch && ch <= '9':
+        cl = "Int"
+        case ('a' <= ch && ch <= 'z') || ('A' <= ch && ch <= 'Z'):
+        cl = "ABC"
+        default:
+        cl = "Other Char"
+    }
+    fmt.Println(cl)
 }
