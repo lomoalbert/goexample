@@ -17,4 +17,10 @@ func Test_Division_2(t *testing.T) {
 }
 /*
 $ go test
+--- FAIL: Test_Division_2 (0.00s)
+        testing_test.go:16: 就是不通过
+FAIL
+exit status 1
+FAIL    _/home/albert/code/go/goexample/gotest  0.004s
+
 */
