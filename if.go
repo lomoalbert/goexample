@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-//todo:if
+
 func main() {
     // Here's a basic example.
     if 7%2 == 0 {
