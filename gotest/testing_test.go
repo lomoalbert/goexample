@@ -28,6 +28,11 @@ $ go test -bench=.
 PASS
 BenchmarkDivision       200000000                6.84 ns/op
 ok      _/home/albert/code/go/goexample/gotest  2.079s
-
-
+$ go test -bench=. -v
+=== RUN Test_Division
+--- PASS: Test_Division (0.00s)
+        testing_test.go:12: 第一个测试通过了
+PASS
+Benchmark_Division      200000000                6.77 ns/op
+ok      _/home/albert/code/go/goexample/gotest  2.059s
 */
