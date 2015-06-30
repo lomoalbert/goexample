@@ -1,4 +1,6 @@
 package main
+
+import "io"
 //todo: io.Reader io.Writer
 /*
 type Reader interface {
