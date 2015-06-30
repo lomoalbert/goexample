@@ -4,7 +4,8 @@ import (
     "testing"
 )
 
-func Test_Division_1(t *testing.T) {
+//功能测试
+func Test_Division(t *testing.T) {
     if i, e := Division(6, 2); i != 3 || e != nil { //try a unit test on function
         t.Error("除法函数测试没通过") // 如果不是如预期的那么就报错
     } else {
@@ -12,15 +13,21 @@ func Test_Division_1(t *testing.T) {
     }
 }
 
-func Test_Division_2(t *testing.T) {
-    t.Error("就是不通过")
+//性能测试
+func Benchmark_Division(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+        Division(6, 2)
+    }
 }
+
 /*
 $ go test
---- FAIL: Test_Division_2 (0.00s)
-        testing_test.go:16: 就是不通过
-FAIL
-exit status 1
-FAIL    _/home/albert/code/go/goexample/gotest  0.004s
+PASS
+ok      _/home/albert/code/go/goexample/gotest  0.002s
+$ go test -bench=.
+PASS
+BenchmarkDivision       200000000                6.84 ns/op
+ok      _/home/albert/code/go/goexample/gotest  2.079s
+
 
 */
