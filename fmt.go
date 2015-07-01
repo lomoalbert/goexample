@@ -77,6 +77,17 @@ import "fmt"
 0       填充前导的0而非空格；对于数字，这会将填充移到正负号之后
 
 */
+type Website struct {
+    Name string
+}
+
+
+
 func main() {
+    P := fmt.Printf
+    // 打印结构体时
+    var site = Website{Name:"studygolang"}
+    P("%v\n", site)
+    P("%+v\n", site)
 
 }
