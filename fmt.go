@@ -87,7 +87,7 @@ func main() {
     P := fmt.Printf
     // 打印结构体时
     var site = Website{Name:"studygolang"}
-    P("%v\n", site)
+    P("%v\n", site) //相应值的默认格式
     P("%+v\n", site)
     P("%#v\n", site)
     P("%T\n", site)
