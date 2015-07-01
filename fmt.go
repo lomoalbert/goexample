@@ -89,5 +89,8 @@ func main() {
     var site = Website{Name:"studygolang"}
     P("%v\n", site)
     P("%+v\n", site)
+    P("%#v\n", site)
+    P("%T\n", site)
+    P("%%\n")
 
 }
