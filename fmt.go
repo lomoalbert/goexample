@@ -91,6 +91,8 @@ func main() {
     P("%+v\n", site) //打印结构体时,显示字段名
     P("%#v\n", site) //相应值的go语法表示
     P("%T\n", site) // 相应值的类型的go语法表示
-    P("%%\n")
+    P("%%\n")   // 字面的百分号
+
+    P("%t\n", true) //布尔值true 或 false
 
 }
