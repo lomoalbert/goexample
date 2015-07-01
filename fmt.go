@@ -95,6 +95,6 @@ func main() {
     // 布尔占位符
     P("%t\n", true) //布尔值true 或 false
     //整数占位符
-    P("%b", 5) //二进制表示
-    P("%c", 0x4e2d) // 相应Unicode码的字符
+    P("%b\n", 5) //二进制表示
+    P("%c\n", 20013) // 相应Unicode码的字符
 }
