@@ -89,7 +89,7 @@ func main() {
     var site = Website{Name:"studygolang"}
     P("%v\n", site) //相应值的默认格式
     P("%+v\n", site) //打印结构体时,显示字段名
-    P("%#v\n", site)
+    P("%#v\n", site) //相应值的go语法表示
     P("%T\n", site)
     P("%%\n")
 
