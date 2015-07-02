@@ -81,8 +81,6 @@ type Website struct {
     Name string
 }
 
-
-
 func main() {
     P := fmt.Printf
     // 普通占位符
@@ -97,4 +95,6 @@ func main() {
     //整数占位符
     P("%b\n", 5) //二进制表示
     P("%c\n", 20013) // 相应Unicode码的字符
+    P("%d\n", 0x12) //将数值转换为十进制
+    P("%o\n", 9)     //将数值转换为八进制
 }
