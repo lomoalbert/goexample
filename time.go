@@ -29,6 +29,11 @@ func main() {
     //合法的单位是"ns", "us" , "ms", "s", "m", "h"。返回Duration值
     d, err := time.ParseDuration("1h2m3s4ms5.8us6ns")
     fmt.Println(d, err)
+    
+    t := "2015-06-15T14:45:00Z"
+    fmt.Println(time.RFC3339)
+    ti , _ := time.Parse(time.RFC3339,t)
+    fmt.Println(ti)
     //Duration值默认单位为nanoseconds,但也可以传唤为其他单位,以及字符串
     fmt.Println(d.Hours(), d.Minutes(), d.Seconds(), d.Nanoseconds(), d.String())
     //返回从时间t到当前时间的间隔，time.Now().Sub(t)的简写
