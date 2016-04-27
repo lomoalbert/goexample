@@ -16,6 +16,6 @@ func main() {
 }
 
 func done(wg sync.WaitGroup) {
+    defer wg.Done()
     //dosomething
-    wg.Done()
 }
